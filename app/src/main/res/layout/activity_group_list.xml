@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/groupName1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GroupName" />
+
+    <Button
+        android:id="@+id/renameGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rename Group" />
+
+    <Button
+        android:id="@+id/removeGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove Group" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/groupMember1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="groupMember1" />
+
+        <Button
+            android:id="@+id/removeGroupMember1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remove Group Member 1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/groupMember2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="groupMember2" />
+
+        <Button
+            android:id="@+id/removeGroupMember2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remove Group Member 2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/groupMember3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="groupMember3" />
+
+        <Button
+            android:id="@+id/removeGroupMember3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remove Group Member 3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/groupMember4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="groupMember4" />
+
+        <Button
+            android:id="@+id/removeGroupMember4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Remove Group Member 4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/groupMember5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="groupMember5" />
+
+        <Button
+            android:id="@+id/removeGroupMember5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Remove Group Member 5" />
+    </LinearLayout>
+
+</LinearLayout>
