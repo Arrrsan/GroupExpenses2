@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    app:layoutDescription="@xml/activity_creating_group_scene">
+    app:layoutDescription="@xml/activity_creating_group_scene"
+    app:id="@+id/activity_creating_group">
 
     <EditText
         android:id="@+id/groupNameInput"
