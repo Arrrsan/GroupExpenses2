@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_creating_group"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    app:layoutDescription="@xml/activity_creating_group_scene"
-    app:id="@+id/activity_creating_group">
+    app:layoutDescription="@xml/activity_creating_group_scene">
 
     <EditText
         android:id="@+id/groupNameInput"
