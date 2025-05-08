@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="enter_first_names_label">Enter first names!</string>
+    <string name="group_members_label">Group Members</string>
+    <string name="submit_label">Submit</string>
+    <string name="enter_a_group_name_label">Enter a group name!</string>
+    <string name="group_name_label">Group Name</string>
 </resources>
