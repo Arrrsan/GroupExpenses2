@@ -41,7 +41,6 @@ public class RenameGroupActivity extends AppCompatActivity {
         String groupName = groupNameInput.getText().toString();
 
         renameIntent.putExtra(CreatingGroupActivity.GROUP_ID, groupName);
-        startActivity(renameIntent);
-        //would like to end the activity
+        finish();
     }
 }

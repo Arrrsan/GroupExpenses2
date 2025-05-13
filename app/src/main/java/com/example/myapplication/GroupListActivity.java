@@ -27,11 +27,9 @@ public class GroupListActivity extends AppCompatActivity {
         //todo All our functional code should just be used only in this class/activity
 
         Intent intent = getIntent();
-
         setGroupName();
-
         String namesString = intent.getStringExtra(CreatingGroupActivity.PEOPLE_ID);
-        // handle names
+        settingNames(namesString);
 
         // Remove Group Button
         Button removeGroupButton = findViewById(R.id.removeGroup);
@@ -43,15 +41,16 @@ public class GroupListActivity extends AppCompatActivity {
             }
         });
 
-        // Rename Group Button
+        // Rename Group Button //
         Button renameGroupButton = findViewById(R.id.renameGroup);
         renameGroupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switchRenameGroupActivity();
-                setGroupName();
             }
         });
+
+
     }
     private void removeGroup(){
         finish();
@@ -68,5 +67,22 @@ public class GroupListActivity extends AppCompatActivity {
         String groupNameString = intent.getStringExtra(CreatingGroupActivity.GROUP_ID);
         TextView groupNameView = findViewById(R.id.groupName1);
         groupNameView.setText(groupNameString);
+    }
+
+    // Handles names (up to five)
+    private void settingNames(String names){
+        String[] namesList = names.split(",");
+
+        int[] textViewIds = {
+                R.id.groupMember1,
+                R.id.groupMember2,
+                R.id.groupMember3,
+                R.id.groupMember4,
+                R.id.groupMember5
+        };
+        for(int i = 0; i < namesList.length; i++){
+            TextView member = findViewById(textViewIds[i]);
+            member.setText(namesList[i].trim());
+        }
     }
 }
