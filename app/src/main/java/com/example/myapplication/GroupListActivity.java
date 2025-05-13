@@ -1,6 +1,10 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +24,49 @@ public class GroupListActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        //todo All our functional code should just be used only in this class/activity
+
+        Intent intent = getIntent();
+
+        setGroupName();
+
+        String namesString = intent.getStringExtra(CreatingGroupActivity.PEOPLE_ID);
+        // handle names
+
+        // Remove Group Button
+        Button removeGroupButton = findViewById(R.id.removeGroup);
+        removeGroupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Todo make method to check if there are no people left
+                removeGroup();
+            }
+        });
+
+        // Rename Group Button
+        Button renameGroupButton = findViewById(R.id.renameGroup);
+        renameGroupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchRenameGroupActivity();
+                setGroupName();
+            }
+        });
+    }
+    private void removeGroup(){
+        finish();
+    }
+
+    private void switchRenameGroupActivity(){
+        Intent renameGroupIntent = new Intent(this, RenameGroupActivity.class);
+        startActivity(renameGroupIntent);
+    }
+
+    private void setGroupName(){
+        Intent intent = getIntent();
+
+        String groupNameString = intent.getStringExtra(CreatingGroupActivity.GROUP_ID);
+        TextView groupNameView = findViewById(R.id.groupName1);
+        groupNameView.setText(groupNameString);
     }
 }

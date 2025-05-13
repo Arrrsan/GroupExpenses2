@@ -1,6 +1,10 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +13,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class CreatingGroupActivity extends AppCompatActivity {
+    public static final String GROUP_ID = "group.name";
+    public static final String PEOPLE_ID = "people.name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +26,25 @@ public class CreatingGroupActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button submitData = findViewById(R.id.submitGroupData);
+        submitData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                groupListActivity();
+            }
+        });
+    }
+
+    private void groupListActivity(){
+        EditText groupNameInput = findViewById(R.id.groupNameInput);
+        EditText peopleNamesInput = findViewById(R.id.groupPeopleInput);
+        Intent switchToListActivity = new Intent(this, GroupListActivity.class);
+
+        String groupName = groupNameInput.getText().toString();
+        String peopleNames = peopleNamesInput.getText().toString();
+        switchToListActivity.putExtra(GROUP_ID, groupName);
+        switchToListActivity.putExtra(PEOPLE_ID, peopleNames);
+        startActivity(switchToListActivity);
     }
 }
