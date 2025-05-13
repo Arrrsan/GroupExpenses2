@@ -50,7 +50,6 @@ public class CreatingGroupActivity extends AppCompatActivity {
 
         myGroup = new Group(groupName);
 
-        // switchToListActivity.putExtra(GROUP_ID, groupName);
         switchToListActivity.putExtra(PEOPLE_ID, peopleNames);
         startActivity(switchToListActivity);
     }

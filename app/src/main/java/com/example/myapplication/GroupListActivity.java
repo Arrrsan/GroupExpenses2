@@ -52,6 +52,9 @@ public class GroupListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 switchRenameGroupActivity();
+                // finish returns to previous state
+                // might need to use onActivityResult to then change the name
+                setGroupName();
             }
         });
 
@@ -61,7 +64,8 @@ public class GroupListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TableRow row1 = findViewById(R.id.TableRow1);
-                removeMemberRow(row1);
+                TextView mem1 = findViewById(R.id.groupMember1);
+                removeMemberRow(row1, mem1);
             }
         });
 
@@ -70,7 +74,8 @@ public class GroupListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TableRow row2 = findViewById(R.id.TableRow2);
-                removeMemberRow(row2);
+                TextView mem2 = findViewById(R.id.groupMember2);
+                removeMemberRow(row2, mem2);
             }
         });
 
@@ -80,7 +85,8 @@ public class GroupListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TableRow row3 = findViewById(R.id.TableRow3);
-                removeMemberRow(row3);
+                TextView mem3 = findViewById(R.id.groupMember3);
+                removeMemberRow(row3, mem3);
             }
         });
 
@@ -89,7 +95,8 @@ public class GroupListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TableRow row4 = findViewById(R.id.TableRow4);
-                removeMemberRow(row4);
+                TextView mem4 = findViewById(R.id.groupMember4);
+                removeMemberRow(row4, mem4);
             }
         });
 
@@ -98,13 +105,16 @@ public class GroupListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TableRow row5 = findViewById(R.id.TableRow5);
-                removeMemberRow(row5);
+                TextView mem5 = findViewById(R.id.groupMember5);
+                removeMemberRow(row5, mem5);
             }
         });
 
     }
     private void removeGroup(){
-        finish();
+        if(CreatingGroupActivity.myGroup.isEmptyGroup()) {
+            finish();
+        }
     }
 
     private void switchRenameGroupActivity(){
@@ -137,13 +147,23 @@ public class GroupListActivity extends AppCompatActivity {
 
         for(int i = 0; i < namesList.length; i++){
             TextView member = findViewById(textViewIds[i]);
-            member.setText(namesList[i].trim());
+            Person p = CreatingGroupActivity.myGroup.personList.get(i);
+            member.setText(p.getName());
         }
     }
 
-    private void removeMemberRow(TableRow row){
+    private void removeMemberRow(TableRow row, TextView name){
         TableLayout memberTable = findViewById(R.id.MemberTableLayout);
+        String memberName = name.getText().toString();
+
+        for (int i = 0; i < CreatingGroupActivity.myGroup.personList.size(); i++){
+            Person p = CreatingGroupActivity.myGroup.personList.get(i);
+            if (p.getName().equals(memberName)){
+                CreatingGroupActivity.myGroup.removeMember(p);
+            }
+        }
         //todo Check for debt
+
         memberTable.removeView(row);
     }
 }

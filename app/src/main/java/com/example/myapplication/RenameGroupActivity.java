@@ -37,12 +37,10 @@ public class RenameGroupActivity extends AppCompatActivity {
     }
 
     private void switchGroupListActivity(){
-        Intent renameIntent = new Intent(this, GroupListActivity.class);
-
         EditText groupNameInput = findViewById(R.id.groupNameInput);
         String groupName = groupNameInput.getText().toString();
+        CreatingGroupActivity.myGroup.changeGroupName(groupName);
 
-        renameIntent.putExtra(CreatingGroupActivity.GROUP_ID, groupName);
         finish();
     }
 }
