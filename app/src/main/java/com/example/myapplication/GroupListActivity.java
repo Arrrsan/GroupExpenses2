@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -50,6 +51,28 @@ public class GroupListActivity extends AppCompatActivity {
             }
         });
 
+        // Remove Members Buttons //
+
+        Button removeMember1 = findViewById(R.id.removeGroupMember1);
+        removeMember1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TableRow row1 = findViewById(R.id.TableRow1);
+                removeMemberRow(row1);
+            }
+        });
+
+        Button removeMember2 = findViewById(R.id.removeGroupMember2);
+
+
+        Button removeMember3 = findViewById(R.id.removeGroupMember3);
+
+
+        Button removeMember4 = findViewById(R.id.removeGroupMember4);
+
+
+        Button removeMember5 = findViewById(R.id.removeGroupMember5);
+
 
     }
     private void removeGroup(){
@@ -84,5 +107,9 @@ public class GroupListActivity extends AppCompatActivity {
             TextView member = findViewById(textViewIds[i]);
             member.setText(namesList[i].trim());
         }
+    }
+
+    private void removeMemberRow(TableRow row){
+
     }
 }
