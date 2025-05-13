@@ -7,4 +7,6 @@
     <string name="group_name_label">Group Name</string>
     <string name="create_group_label">Create Group</string>
     <string name="greeting_label">Greetings!</string>
+    <string name="enter_a_charge">Enter a charge!</string>
+    <string name="charge_usd_label">Charge (USD)</string>
 </resources>

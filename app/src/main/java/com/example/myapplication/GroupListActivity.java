@@ -14,6 +14,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Locale;
+
 import code.*;
 
 public class GroupListActivity extends AppCompatActivity {
@@ -110,6 +112,26 @@ public class GroupListActivity extends AppCompatActivity {
             }
         });
 
+        int[] addChargeButtonIds = {
+                R.id.addCharge1,
+                R.id.addCharge2,
+                R.id.addCharge3,
+                R.id.addCharge4,
+                R.id.addCharge5
+        };
+
+        for (int i = 0; i < addChargeButtonIds.length; i++) {
+            final int personIndex = i;
+            Button btn = findViewById(addChargeButtonIds[i]);
+            btn.setOnClickListener(v -> {
+                Intent chargeIntent = new Intent(GroupListActivity.this,
+                        AddChargeActivity.class);
+                chargeIntent.putExtra("person_index", personIndex);
+                startActivity(chargeIntent);
+            });
+        }
+
+
     }
     private void removeGroup(){
         if(CreatingGroupActivity.myGroup.isEmptyGroup()) {
@@ -165,5 +187,27 @@ public class GroupListActivity extends AppCompatActivity {
         //todo Check for debt
 
         memberTable.removeView(row);
+    }
+
+    protected void onResume() {
+        super.onResume();
+
+        int[] paymentViewIds = {
+                R.id.groupMemberPayment1,
+                R.id.groupMemberPayment2,
+                R.id.groupMemberPayment3,
+                R.id.groupMemberPayment4,
+                R.id.groupMemberPayment5
+        };
+
+        for (int i = 0; i < CreatingGroupActivity.myGroup.personList.size(); i++) {
+            TextView tv = findViewById(paymentViewIds[i]);
+            double debt = CreatingGroupActivity
+                    .myGroup
+                    .personList
+                    .get(i)
+                    .getTotalDebt();
+            tv.setText(String.format(Locale.US, "$%.2f", debt));
+        }
     }
 }
