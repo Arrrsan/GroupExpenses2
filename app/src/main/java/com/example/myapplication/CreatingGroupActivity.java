@@ -12,9 +12,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import code.*;
+
 public class CreatingGroupActivity extends AppCompatActivity {
     public static final String GROUP_ID = "group.name";
     public static final String PEOPLE_ID = "people.name";
+
+    public static Group myGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,10 @@ public class CreatingGroupActivity extends AppCompatActivity {
 
         String groupName = groupNameInput.getText().toString();
         String peopleNames = peopleNamesInput.getText().toString();
-        switchToListActivity.putExtra(GROUP_ID, groupName);
+
+        myGroup = new Group(groupName);
+
+        // switchToListActivity.putExtra(GROUP_ID, groupName);
         switchToListActivity.putExtra(PEOPLE_ID, peopleNames);
         startActivity(switchToListActivity);
     }

@@ -14,6 +14,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import code.*;
+
 public class GroupListActivity extends AppCompatActivity {
 
     @Override
@@ -28,10 +30,11 @@ public class GroupListActivity extends AppCompatActivity {
         });
         //todo All our functional code should just be used only in this class/activity
 
-        Intent intent = getIntent();
         setGroupName();
+
+        Intent intent = getIntent();
         String namesString = intent.getStringExtra(CreatingGroupActivity.PEOPLE_ID);
-        settingNames(namesString);
+        settingMembers(namesString);
 
         // Remove Group Button
         Button removeGroupButton = findViewById(R.id.removeGroup);
@@ -53,7 +56,6 @@ public class GroupListActivity extends AppCompatActivity {
         });
 
         // Remove Members Buttons //
-
         Button removeMember1 = findViewById(R.id.removeGroupMember1);
         removeMember1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,17 +113,15 @@ public class GroupListActivity extends AppCompatActivity {
     }
 
     private void setGroupName(){
-        Intent intent = getIntent();
-
-        String groupNameString = intent.getStringExtra(CreatingGroupActivity.GROUP_ID);
+        String groupName = CreatingGroupActivity.myGroup.getGroupName();
         TextView groupNameView = findViewById(R.id.groupName1);
-        groupNameView.setText(groupNameString);
+
+        groupNameView.setText(groupName);
     }
 
     // Handles names (up to five)
-    private void settingNames(String names){
+    private void settingMembers(String names){
         String[] namesList = names.split(",");
-
         int[] textViewIds = {
                 R.id.groupMember1,
                 R.id.groupMember2,
@@ -129,6 +129,12 @@ public class GroupListActivity extends AppCompatActivity {
                 R.id.groupMember4,
                 R.id.groupMember5
         };
+
+        for (String name : namesList){
+            Person p = new Person(0.0, name.trim());
+            CreatingGroupActivity.myGroup.addMember(p);
+        }
+
         for(int i = 0; i < namesList.length; i++){
             TextView member = findViewById(textViewIds[i]);
             member.setText(namesList[i].trim());
