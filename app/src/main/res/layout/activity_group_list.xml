@@ -62,6 +62,12 @@
                         android:text="memberDebt1" />
 
                     <Button
+                        android:id="@+id/addCharge1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Charge" />
+
+                    <Button
                         android:id="@+id/removeGroupMember1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -86,6 +92,12 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="memberDebt2" />
+
+                    <Button
+                        android:id="@+id/addCharge2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Charge" />
 
                     <Button
                         android:id="@+id/removeGroupMember2"
@@ -114,10 +126,17 @@
                         android:text="memberDebt3" />
 
                     <Button
+                        android:id="@+id/addCharge3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Charge" />
+
+                    <Button
                         android:id="@+id/removeGroupMember3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Remove Group Member 3" />
+
                 </TableRow>
 
                 <TableRow
@@ -138,6 +157,12 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="memberDebt4" />
+
+                    <Button
+                        android:id="@+id/addCharge4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Charge" />
 
                     <Button
                         android:id="@+id/removeGroupMember4"
@@ -165,6 +190,12 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="memberDebt5" />
+
+                    <Button
+                        android:id="@+id/addCharge5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Charge" />
 
                     <Button
                         android:id="@+id/removeGroupMember5"
