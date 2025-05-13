@@ -34,14 +34,13 @@ public class GroupListActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        // All our functional code should just be used only in this class/activity
+        // All functionality is tied in this class
 
         setGroupName();
 
         Intent intent = getIntent();
         String namesString = intent.getStringExtra(CreatingGroupActivity.PEOPLE_ID);
         settingMembers(namesString);
-
 
         // Remove Group Button
         Button removeGroupButton = findViewById(R.id.removeGroup);
@@ -69,6 +68,7 @@ public class GroupListActivity extends AppCompatActivity {
                 switchRenameGroupActivity();
             }
         });
+        // ---------------------- //
 
         // Remove Members Buttons //
         Button removeMember1 = findViewById(R.id.removeGroupMember1);
@@ -161,7 +161,7 @@ public class GroupListActivity extends AppCompatActivity {
         groupNameView.setText(groupName);
     }
 
-    // Handles names (up to five)
+    // Name Handler
     private void settingMembers(String names){
         String[] namesList = names.split(",");
         int[] textViewIds = {
@@ -172,11 +172,12 @@ public class GroupListActivity extends AppCompatActivity {
                 R.id.groupMember5
         };
 
+        // Creates our people
         for (String name : namesList){
             Person p = new Person(0.0, name.trim());
             CreatingGroupActivity.myGroup.addMember(p);
         }
-
+        // Adds people to the group and display
         for(int i = 0; i < namesList.length; i++){
             TextView member = findViewById(textViewIds[i]);
             Person p = CreatingGroupActivity.myGroup.personList.get(i);
@@ -184,13 +185,13 @@ public class GroupListActivity extends AppCompatActivity {
         }
     }
 
+    // Member Removal Handler
     private void removeMemberRow(TableRow row, TextView name){
         TableLayout memberTable = findViewById(R.id.MemberTableLayout);
         String memberName = name.getText().toString();
 
         for (int i = 0; i < CreatingGroupActivity.myGroup.personList.size(); i++){
             Person p = CreatingGroupActivity.myGroup.personList.get(i);
-
             if (p.getName().equals(memberName)){
                 if(p.getTotalDebt() <= 0) {
                     CreatingGroupActivity.myGroup.removeMember(p);
