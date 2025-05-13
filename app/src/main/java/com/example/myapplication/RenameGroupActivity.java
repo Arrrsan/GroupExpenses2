@@ -32,6 +32,8 @@ public class RenameGroupActivity extends AppCompatActivity {
                 switchGroupListActivity();
             }
         });
+
+
     }
 
     private void switchGroupListActivity(){
