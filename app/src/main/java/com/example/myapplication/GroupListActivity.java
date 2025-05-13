@@ -158,12 +158,15 @@ public class GroupListActivity extends AppCompatActivity {
 
         for (int i = 0; i < CreatingGroupActivity.myGroup.personList.size(); i++){
             Person p = CreatingGroupActivity.myGroup.personList.get(i);
+
             if (p.getName().equals(memberName)){
-                CreatingGroupActivity.myGroup.removeMember(p);
+                if(p.getTotalDebt() <= 0) {
+                    CreatingGroupActivity.myGroup.removeMember(p);
+                }else{
+                    return;
+                }
             }
         }
-        //todo Check for debt
-
         memberTable.removeView(row);
     }
 }
