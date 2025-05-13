@@ -40,7 +40,7 @@ public class RenameGroupActivity extends AppCompatActivity {
         EditText groupNameInput = findViewById(R.id.groupNameInput);
         String groupName = groupNameInput.getText().toString();
         CreatingGroupActivity.myGroup.changeGroupName(groupName);
-
+        setResult(RESULT_OK);
         finish();
     }
 }
