@@ -9,6 +9,8 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -17,6 +19,8 @@ import androidx.core.view.WindowInsetsCompat;
 import code.*;
 
 public class GroupListActivity extends AppCompatActivity {
+
+    private ActivityResultLauncher<Intent> renameGroupActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +32,7 @@ public class GroupListActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        //todo All our functional code should just be used only in this class/activity
+        // All our functional code should just be used only in this class/activity
 
         setGroupName();
 
@@ -36,25 +40,31 @@ public class GroupListActivity extends AppCompatActivity {
         String namesString = intent.getStringExtra(CreatingGroupActivity.PEOPLE_ID);
         settingMembers(namesString);
 
+
         // Remove Group Button
         Button removeGroupButton = findViewById(R.id.removeGroup);
         removeGroupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Todo make method to check if there are no people left
                 removeGroup();
             }
         });
 
         // Rename Group Button //
+        renameGroupActivity = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    setGroupName();
+                }
+            }
+        );
+
         Button renameGroupButton = findViewById(R.id.renameGroup);
         renameGroupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switchRenameGroupActivity();
-                // finish returns to previous state
-                // might need to use onActivityResult to then change the name
-                setGroupName();
             }
         });
 
@@ -119,7 +129,7 @@ public class GroupListActivity extends AppCompatActivity {
 
     private void switchRenameGroupActivity(){
         Intent renameGroupIntent = new Intent(this, RenameGroupActivity.class);
-        startActivity(renameGroupIntent);
+        renameGroupActivity.launch(renameGroupIntent);
     }
 
     private void setGroupName(){
