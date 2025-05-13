@@ -31,17 +31,28 @@ public class AddChargeActivity extends AppCompatActivity {
                 }
         );
 
+        // Find the EditText where the user enters the dollar amount, and find the submit button
+
         EditText amountInput = findViewById(R.id.editTextNumberSigned);
         Button submitBtn   = findViewById(R.id.submitGroupData);
+
+        // Read which person index we’re charging (passed in via Intent)
 
         final int personIndex = getIntent().getIntExtra("person_index", -1);
 
         submitBtn.setOnClickListener(v -> {
+
+            // 1) Get the text and trim whitespace
+
             String txt = amountInput.getText().toString().trim();
             double amt;
             try {
+                // 2) Parse the string into a double
                 amt = Double.parseDouble(txt);
             } catch (NumberFormatException e) {
+
+                // 3) If parsing fails, show an error toast and bail out
+
                 Toast.makeText(
                         AddChargeActivity.this,
                         "Please enter a valid number",
@@ -50,12 +61,19 @@ public class AddChargeActivity extends AppCompatActivity {
                 return;
             }
 
+            // 4) Wrap the parsed amount in your Money class
+
             Money charge = new Money(amt);
+
+            // 5) Add this charge to the correct Person in your shared group
+
             CreatingGroupActivity
                     .myGroup
                     .personList
                     .get(personIndex)
                     .addCharge(charge);
+
+            // 6) Finish this Activity—return to the list screen (which will refresh)
 
             finish();
         });
