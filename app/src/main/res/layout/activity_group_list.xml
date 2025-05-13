@@ -11,7 +11,7 @@
         android:id="@+id/groupName1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GroupName"
+        android:text="@string/groupname_displayText"
         android:textAlignment="center"
         android:textSize="34sp" />
 
@@ -19,13 +19,13 @@
         android:id="@+id/removeGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Remove Group" />
+        android:text="@string/remove_group_displayText" />
 
     <Button
         android:id="@+id/renameGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rename Group" />
+        android:text="@string/rename_group_displayText" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -52,26 +52,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="groupMember1" />
+                        android:text="@string/groupmember1_displayText" />
 
                     <TextView
                         android:id="@+id/groupMemberPayment1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="memberDebt1" />
+                        android:text="@string/memberdebt1_displayText" />
 
                     <Button
                         android:id="@+id/addCharge1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add Charge" />
+                        android:text="@string/add_charge_displayText" />
 
                     <Button
                         android:id="@+id/removeGroupMember1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Remove Group Member 1" />
+                        android:text="@string/remove_member_displayText" />
                 </TableRow>
 
                 <TableRow
@@ -84,26 +84,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="groupMember2" />
+                        android:text="@string/groupmember2_displayText" />
 
                     <TextView
                         android:id="@+id/groupMemberPayment2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="memberDebt2" />
+                        android:text="@string/memberdebt2_displayText" />
 
                     <Button
                         android:id="@+id/addCharge2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add Charge" />
+                        android:text="@string/add_charge_displayText" />
 
                     <Button
                         android:id="@+id/removeGroupMember2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Remove Group Member 2" />
+                        android:text="@string/remove_member_displayText" />
                 </TableRow>
 
                 <TableRow
@@ -116,26 +116,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="groupMember3" />
+                        android:text="@string/groupmember3_displayText" />
 
                     <TextView
                         android:id="@+id/groupMemberPayment3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="memberDebt3" />
+                        android:text="@string/memberdebt3_displayText" />
 
                     <Button
                         android:id="@+id/addCharge3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add Charge" />
+                        android:text="@string/add_charge_displayText" />
 
                     <Button
                         android:id="@+id/removeGroupMember3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Remove Group Member 3" />
+                        android:text="@string/remove_member_displayText" />
 
                 </TableRow>
 
@@ -149,26 +149,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="groupMember4" />
+                        android:text="@string/groupmember4_displayText" />
 
                     <TextView
                         android:id="@+id/groupMemberPayment4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="memberDebt4" />
+                        android:text="@string/memberdebt4_displayText" />
 
                     <Button
                         android:id="@+id/addCharge4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add Charge" />
+                        android:text="@string/add_charge_displayText" />
 
                     <Button
                         android:id="@+id/removeGroupMember4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Remove Group Member 4" />
+                        android:text="@string/remove_member_displayText" />
 
                 </TableRow>
 
@@ -182,26 +182,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="groupMember5" />
+                        android:text="@string/groupmember5_displayText" />
 
                     <TextView
                         android:id="@+id/groupMemberPayment5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="memberDebt5" />
+                        android:text="@string/memberdebt5_displayText" />
 
                     <Button
                         android:id="@+id/addCharge5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add Charge" />
+                        android:text="@string/add_charge_displayText" />
 
                     <Button
                         android:id="@+id/removeGroupMember5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Remove Group Member 5" />
+                        android:text="@string/remove_member_displayText" />
                 </TableRow>
 
             </TableLayout>

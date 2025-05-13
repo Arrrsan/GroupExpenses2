@@ -9,4 +9,19 @@
     <string name="greeting_label">Greetings!</string>
     <string name="enter_a_charge">Enter a charge!</string>
     <string name="charge_usd_label">Charge (USD)</string>
+    <string name="remove_member_displayText">Remove Member</string>
+    <string name="add_charge_displayText">Add Charge</string>
+    <string name="memberdebt5_displayText">memberDebt5</string>
+    <string name="groupmember5_displayText">groupMember5</string>
+    <string name="memberdebt4_displayText">memberDebt4</string>
+    <string name="groupmember4_displayText">groupMember4</string>
+    <string name="memberdebt3_displayText">memberDebt3</string>
+    <string name="groupmember3_displayText">groupMember3</string>
+    <string name="memberdebt2_displayText">memberDebt2</string>
+    <string name="groupmember2_displayText">groupMember2</string>
+    <string name="memberdebt1_displayText">memberDebt1</string>
+    <string name="groupmember1_displayText">groupMember1</string>
+    <string name="remove_group_displayText">Remove Group</string>
+    <string name="rename_group_displayText">Rename Group</string>
+    <string name="groupname_displayText">GroupName</string>
 </resources>
